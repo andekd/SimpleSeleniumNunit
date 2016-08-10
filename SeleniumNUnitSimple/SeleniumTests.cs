@@ -84,16 +84,19 @@ namespace SeleniumNUnitSimple
         public void UnloadDriver()
         {
             driver.Quit();
-            String fullFileName = "full.txt";
-            String wildFileName = "wild.txt";
-            String dummyFileName = "dummy.txt";
+            string savedir = Environment.GetEnvironmentVariable("CrmTestsDir");
+            Console.WriteLine("value of env CrmTestsDir: " + savedir);
+            String fullFileName = savedir + "\\full.txt";
+            String wildFileName = savedir + "\\wild.txt";
+            String dummyFileName = savedir + "\\dummy.txt";
             var date = DateTime.Now;
             int theMinute = date.Minute;
             int theSec = date.Second;
-
+            
             using (System.IO.StreamWriter file = new System.IO.StreamWriter(fullFileName))
             {
-                String line = "YVALUE=" + theMinute + System.Environment.NewLine + "URL=http://foo.bar/";
+                //String line = "YVALUE=" + theMinute + System.Environment.NewLine + "URL=http://foo.bar/";
+                String line = "YVALUE=" + theMinute;
                 file.WriteLine(line);
                 file.Close();
             }
