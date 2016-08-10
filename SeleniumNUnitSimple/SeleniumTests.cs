@@ -109,6 +109,7 @@ namespace SeleniumNUnitSimple
                 file.WriteLine(line);
                 file.Close();
             }
+
         }
     }
 }
