@@ -104,7 +104,7 @@ namespace SeleniumNUnitSimple
             Console.WriteLine("value of env CrmTestsDir: " + savedir);
             String fullFileName = savedir + "\\full.txt";
             String wildFileName = savedir + "\\wild.txt";
-            String dummyFileName = savedir + "\\dummy.txt";
+            String dummyFileName = savedir + "\\dummy13.txt";
             var date = DateTime.Now;
             int theMinute = date.Minute;
             int theSec = date.Second;
