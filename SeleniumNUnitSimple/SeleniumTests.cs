@@ -58,8 +58,24 @@ namespace SeleniumNUnitSimple
         public GoogleTests() { }
 
         [SetUp]
-        public void LoadDriver() { driver = new FirefoxDriver(); }
-
+        public void LoadDriver()
+        {
+            driver = new FirefoxDriver();
+            // getting dummy testdata file to check how a testdata folder is handled in jenkins
+            string plainFileName = "dummy1.txt";
+            string execPath = System.IO.Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory);
+            Console.WriteLine("execPath " + execPath);
+            string nameSpacePath = System.IO.Directory.GetParent(System.IO.Directory.GetParent(execPath).FullName).FullName;
+            Console.WriteLine("nameSpacePath " + nameSpacePath);
+            string testDataPath = nameSpacePath + @"\TestData\";
+            string fullFileName = testDataPath + plainFileName;
+            Console.WriteLine("fullFileName " + fullFileName);
+            using (System.IO.StreamReader file = new System.IO.StreamReader(fullFileName))
+            {
+                string data = file.ReadToEnd();
+                Console.WriteLine("Content of dummy file: " + data);
+            };
+        }
         [TestCase("Google", "Google")]   // searchString = Google
         [TestCase("Bing", "Bing")]     // searchString = Bing
         public void Search(string searchString, string result)
