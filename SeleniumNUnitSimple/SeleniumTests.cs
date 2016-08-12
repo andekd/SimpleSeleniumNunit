@@ -112,13 +112,13 @@ namespace SeleniumNUnitSimple
             using (System.IO.StreamWriter file = new System.IO.StreamWriter(fullFileName))
             {
                 //String line = "YVALUE=" + theMinute + System.Environment.NewLine + "URL=http://foo.bar/";
-                String line = "YVALUE=" + theMinute;
+                String line = "YVALUE=" + theMinute + ",25";
                 file.WriteLine(line);
                 file.Close();
             }
             using (System.IO.StreamWriter file = new System.IO.StreamWriter(wildFileName))
             {
-                String line = "YVALUE=" + theSec;
+                String line = "YVALUE=" + theSec + ",25";
                 file.WriteLine(line);
                 file.Close();
             }
