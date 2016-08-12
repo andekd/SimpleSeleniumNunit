@@ -106,8 +106,8 @@ namespace SeleniumNUnitSimple
             String wildFileName = savedir + "\\wild.txt";
             String dummyFileName = savedir + "\\dummy13.txt";
             var date = DateTime.Now;
-            int theMinute = date.Minute;
-            int theSec = date.Second;
+            int theMinute = date.Minute * 10;
+            int theSec = date.Second * 10;
             
             using (System.IO.StreamWriter file = new System.IO.StreamWriter(fullFileName))
             {
