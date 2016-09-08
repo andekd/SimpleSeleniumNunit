@@ -70,11 +70,11 @@ namespace SeleniumNUnitSimple
             string testDataPath = nameSpacePath + @"\TestData\";
             string fullFileName = testDataPath + plainFileName;
             Console.WriteLine("fullFileName " + fullFileName);
-            using (System.IO.StreamReader file = new System.IO.StreamReader(fullFileName))
-            {
-                string data = file.ReadToEnd();
-                Console.WriteLine("Content of dummy file: " + data);
-            };
+            //using (System.IO.StreamReader file = new System.IO.StreamReader(fullFileName))
+            //{
+            //string data = file.ReadToEnd();
+            //Console.WriteLine("Content of dummy file: " + data);
+            //};
         }
         [TestCase("Google", "Google")]   // searchString = Google
         [TestCase("Bing", "Bing")]     // searchString = Bing
